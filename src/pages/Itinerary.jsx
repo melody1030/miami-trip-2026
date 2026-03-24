@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { MoreHorizontal } from 'lucide-react'
 import { useDays, useDayItems } from '../hooks/useItinerary'
 import DaySelector from '../components/itinerary/DaySelector'
@@ -110,10 +111,13 @@ export default function Itinerary() {
         </div>
       )}
 
-      {/* Floating status widget — fixed at bottom */}
-      {!isModalOpen && sortedItems.length > 0 && (
-        <StatusWidget items={sortedItems} onItemClick={handleOpenModal} />
-      )}
+      {/* Floating status widget — portaled to app shell so it overlays above scroll */}
+      {!isModalOpen && sortedItems.length > 0 && document.getElementById('app-shell') &&
+        createPortal(
+          <StatusWidget items={sortedItems} onItemClick={handleOpenModal} />,
+          document.getElementById('app-shell')
+        )
+      }
 
       {/* Bottom sheet modal */}
       <ItemModal

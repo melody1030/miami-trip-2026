@@ -36,7 +36,7 @@ export default function StatusWidget({ items, onItemClick }) {
 
   return (
     <div
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[calc(28rem-2rem)] z-20 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-2xl px-4 py-3 flex items-center justify-between cursor-pointer active:scale-[0.98] transition-transform shadow-lg shadow-blue-500/30"
+      className="absolute bottom-6 left-4 right-4 z-20 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-2xl px-4 py-3 flex items-center justify-between cursor-pointer active:scale-[0.98] transition-transform shadow-lg shadow-blue-500/30"
       onClick={() => onItemClick?.(nextItem)}
     >
       <div className="flex items-center space-x-3 min-w-0">
