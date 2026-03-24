@@ -59,11 +59,11 @@ export default function RouteMapCard({ items }) {
           </a>
         </div>
 
-        {/* Stop list */}
-        <div className="mt-4 flex items-center overflow-x-auto no-scrollbar px-1">
+        {/* Stop list — full width */}
+        <div className="mt-4 flex items-center justify-between">
           {stops.map((stop, i) => (
-            <div key={stop.id || i} className="flex items-center shrink-0">
-              <div className="flex flex-col items-center">
+            <div key={stop.id || i} className="flex items-center flex-1">
+              <div className="flex flex-col items-center flex-1">
                 <div className={`w-3 h-3 rounded-full border-2 ${
                   i === 0
                     ? 'bg-cyan-500 border-cyan-500'
@@ -71,12 +71,12 @@ export default function RouteMapCard({ items }) {
                       ? 'bg-blue-500 border-blue-500'
                       : 'bg-white border-slate-300'
                 }`} />
-                <span className="text-[9px] text-slate-500 mt-1.5 max-w-[52px] text-center truncate leading-tight">
-                  {stop.title.length > 5 ? stop.title.slice(0, 5) + '…' : stop.title}
+                <span className="text-[9px] text-slate-500 mt-1.5 max-w-[60px] text-center truncate leading-tight">
+                  {stop.title.length > 6 ? stop.title.slice(0, 6) + '…' : stop.title}
                 </span>
               </div>
               {i < stops.length - 1 && (
-                <div className="w-5 h-px bg-slate-200 mx-0.5 mb-5" />
+                <div className="flex-1 h-px bg-slate-200 -mx-1 mb-5" />
               )}
             </div>
           ))}

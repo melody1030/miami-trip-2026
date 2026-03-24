@@ -2,7 +2,7 @@ export default function DayHero({ day }) {
   if (!day.heroImage) return null
 
   return (
-    <div className="relative w-full h-72 mt-2 px-4">
+    <div className="relative w-full h-40 mt-2 px-4">
       <div className="w-full h-full rounded-3xl overflow-hidden relative shadow-sm">
         <img
           src={day.heroImage}

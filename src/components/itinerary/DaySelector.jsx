@@ -23,9 +23,9 @@ export default function DaySelector({ days, selectedId, onSelect }) {
               Day {day.dayNumber}
             </span>
             <div
-              className={`flex flex-col items-center justify-center w-12 h-14 rounded-full transition-all ${
+              className={`flex flex-col items-center justify-center w-12 h-14 rounded-xl transition-all ${
                 isActive
-                  ? 'bg-slate-800 text-white shadow-md'
+                  ? 'bg-gradient-to-br from-cyan-500 to-blue-500 text-white shadow-md shadow-blue-500/30'
                   : 'bg-transparent text-slate-500 group-hover:bg-slate-50'
               }`}
             >

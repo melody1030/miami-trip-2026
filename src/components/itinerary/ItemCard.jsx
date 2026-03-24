@@ -1,26 +1,40 @@
 import { Crown } from 'lucide-react'
 import { CARD_STYLES } from '../../utils/constants'
 
+function to24hr(timeStr) {
+  if (!timeStr) return ''
+  const match = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i)
+  if (!match) return timeStr
+  let [, h, m, period] = match
+  h = parseInt(h)
+  if (period) {
+    if (period.toUpperCase() === 'PM' && h !== 12) h += 12
+    if (period.toUpperCase() === 'AM' && h === 12) h = 0
+  }
+  return `${h}:${m.padStart(2, '0')}`
+}
+
 export default function ItemCard({ item, onClick }) {
   const style = CARD_STYLES[item.type] || CARD_STYLES.attraction
   const Icon = style.iconComponent
   const isHighlight = item.highlight
+  const time24 = to24hr(item.time)
 
   return (
     <div
-      className="relative flex mb-8 group cursor-pointer"
+      className="relative mb-6 group cursor-pointer"
       onClick={() => onClick?.(item)}
     >
-      {/* Left time column */}
-      <div className="w-12 shrink-0 pt-1">
-        <span className="font-serif-tc text-base text-slate-800 block">
-          {item.time || ''}
+      {/* Time above card */}
+      {time24 && (
+        <span className="font-serif-tc text-sm text-slate-400 block mb-1.5 ml-1">
+          {time24}
         </span>
-      </div>
+      )}
 
       {/* Content card */}
       <div
-        className={`flex-1 ml-3 rounded-2xl p-4 transition-transform active:scale-[0.98] ${
+        className={`rounded-2xl p-4 transition-transform active:scale-[0.98] ${
           isHighlight
             ? 'bg-pink-50 border border-pink-100 shadow-sm'
             : 'bg-slate-50 hover:bg-slate-100'
