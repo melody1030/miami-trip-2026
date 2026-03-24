@@ -2,7 +2,7 @@ const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六']
 
 export default function DaySelector({ days, selectedId, onSelect }) {
   return (
-    <div className="flex space-x-5 overflow-x-auto no-scrollbar px-2 pb-2">
+    <div className="flex justify-center space-x-5 overflow-x-auto no-scrollbar px-2 pb-2">
       {days.map((day) => {
         const isActive = day.id === selectedId
         const dateObj = new Date(day.date + 'T00:00:00')
