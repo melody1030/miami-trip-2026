@@ -135,10 +135,10 @@ async function seed() {
         image: 'https://images.unsplash.com/photo-1612203985729-70726954388c?q=80&w=600&auto=format&fit=crop',
       },
       {
-        id: 'd2-6', type: 'attraction', title: '馬林魚 vs 白襪 ⚾', time: '6:40 PM',
-        description: 'LoanDepot Park 看大聯盟棒球！球場位於小哈瓦那，有可開合式屋頂，座位約 37,000 個。場內有古巴三明治、Ceviche 等拉丁美食可吃。注意：背包不能帶入場，只能攜帶透明包包（16x16x8吋以內）。可帶一瓶 20oz 以下未開封水。馬林魚門票在大聯盟中算便宜的，現場氣氛很歡樂！',
+        id: 'd2-6', type: 'attraction', title: 'LoanDepot Park 外觀打卡 ⚾', time: '6:00 PM',
+        description: '邁阿密馬林魚隊的主場館 LoanDepot Park，位於小哈瓦那區。球場外觀現代壯觀，有巨型馬林魚雕塑和棒球主題裝置藝術，非常適合拍照留念。周圍街區也充滿拉丁風情，可以順便散步感受小哈瓦那的傍晚氣氛。',
         address: '501 Marlins Way, Miami, FL 33125', sortOrder: 6, highlight: false,
-        notes: ['透明包包限制', '場內有美食', '門票便宜'],
+        notes: ['外觀拍照', '馬林魚雕塑', '免費參觀'],
         image: '',
       },
     ],

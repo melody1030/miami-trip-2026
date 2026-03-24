@@ -12,8 +12,8 @@ export default function ItemCard({ item, onClick }) {
       onClick={() => onClick?.(item)}
     >
       {/* Left time column */}
-      <div className="w-16 shrink-0 pt-1">
-        <span className="font-serif-tc text-lg text-slate-800 block">
+      <div className="w-12 shrink-0 pt-1">
+        <span className="font-serif-tc text-base text-slate-800 block">
           {item.time || ''}
         </span>
       </div>

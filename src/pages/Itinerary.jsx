@@ -50,8 +50,8 @@ export default function Itinerary() {
   return (
     <>
       {/* Top header */}
-      <div className="bg-white/80 backdrop-blur-md pt-14 pb-2 px-4 sticky top-0 z-10">
-        <div className="flex items-center justify-between mb-4 px-2">
+      <div className="bg-white/80 backdrop-blur-md pt-6 pb-2 px-4 sticky top-0 z-10">
+        <div className="flex items-center justify-between mb-3 px-2">
           <div className="w-10" />
           <span className="font-serif-tc text-lg tracking-widest font-medium text-slate-800">
             MIAMI TRIP

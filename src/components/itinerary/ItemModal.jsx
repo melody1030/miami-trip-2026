@@ -14,7 +14,7 @@ export default function ItemModal({ item, isOpen, onClose }) {
     <>
       {/* Backdrop */}
       <div
-        className={`absolute inset-0 bg-slate-900/40 backdrop-blur-sm z-30 transition-opacity duration-300 ${
+        className={`absolute inset-0 bg-slate-900/40 backdrop-blur-sm z-30 transition-opacity duration-400 ease-out ${
           isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={onClose}
@@ -22,8 +22,8 @@ export default function ItemModal({ item, isOpen, onClose }) {
 
       {/* Panel */}
       <div
-        className={`absolute left-0 right-0 bottom-0 bg-white rounded-t-[2rem] z-40 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-          isOpen ? 'translate-y-0' : 'translate-y-full'
+        className={`absolute left-0 right-0 bottom-0 bg-white rounded-t-[2rem] z-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform ${
+          isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
         } max-h-[85vh] overflow-y-auto no-scrollbar pb-8 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]`}
       >
         {/* Photo */}
