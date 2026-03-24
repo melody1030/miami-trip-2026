@@ -22,8 +22,13 @@ export default function ItemModal({ item, isOpen, onClose }) {
 
       {/* Panel */}
       <div
-        className={`absolute left-0 right-0 bottom-0 bg-white rounded-t-[2rem] z-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform ${
-          isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+        style={{
+          transform: isOpen ? 'scale(1) translateY(0)' : 'scale(0.9) translateY(2rem)',
+          opacity: isOpen ? 1 : 0,
+          transition: 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease-out',
+        }}
+        className={`absolute left-0 right-0 bottom-0 bg-white rounded-t-[2rem] z-40 will-change-transform ${
+          !isOpen ? 'pointer-events-none' : ''
         } max-h-[85vh] overflow-y-auto no-scrollbar pb-8 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]`}
       >
         {/* Photo */}

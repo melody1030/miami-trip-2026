@@ -27,7 +27,7 @@ export default function ItemCard({ item, onClick }) {
     >
       {/* Time above card */}
       {time24 && (
-        <span className="font-serif-tc text-sm text-slate-400 block mb-1.5 ml-1">
+        <span className="font-serif-tc text-sm text-slate-800 font-bold block mb-1.5 ml-1">
           {time24}
         </span>
       )}
