@@ -40,4 +40,4 @@ Firebase config is read from `.env` via `import.meta.env.VITE_FIREBASE_*`. Copy 
 
 ## Commit Convention
 
-Commit after every meaningful change. Descriptive messages focused on "why" not "what".
+Commit after every meaningful change. Descriptive messages focused on "why" not "what". Push to GitHub (`git push`) after every major change so the remote stays up to date for logging and recovery.
