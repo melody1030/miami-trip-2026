@@ -91,10 +91,7 @@ export default function Itinerary() {
           {/* Route map card */}
           <RouteMapCard items={sortedItems} />
 
-          {/* Floating status widget */}
-          {!isModalOpen && sortedItems.length > 0 && (
-            <StatusWidget items={sortedItems} onItemClick={handleOpenModal} />
-          )}
+          {/* (StatusWidget rendered as fixed overlay below) */}
 
           {/* Timeline items */}
           <div className="mt-4 px-6">
@@ -113,6 +110,11 @@ export default function Itinerary() {
             )}
           </div>
         </div>
+      )}
+
+      {/* Floating status widget — fixed at bottom */}
+      {!isModalOpen && sortedItems.length > 0 && (
+        <StatusWidget items={sortedItems} onItemClick={handleOpenModal} />
       )}
 
       {/* Bottom sheet modal */}

@@ -1,4 +1,4 @@
-import { MapPin, ChevronRight } from 'lucide-react'
+import { Navigation } from 'lucide-react'
 import { CARD_STYLES } from '../../utils/constants'
 
 export default function StatusWidget({ items, onItemClick }) {
@@ -30,38 +30,34 @@ export default function StatusWidget({ items, onItemClick }) {
   let isNext = true
 
   if (!nextItem) {
-    // All items have passed — show the last one
     nextItem = timedItems[timedItems.length - 1]
     isNext = false
   }
 
-  const style = CARD_STYLES[nextItem.type] || CARD_STYLES.attraction
-  const Icon = style.iconComponent
-
   return (
     <div
-      className="mx-4 mb-4 bg-slate-800 text-white rounded-2xl px-4 py-3 flex items-center justify-between cursor-pointer active:scale-[0.98] transition-transform shadow-lg shadow-slate-800/30"
+      className="fixed bottom-20 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[calc(28rem-2rem)] z-20 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-2xl px-4 py-3 flex items-center justify-between cursor-pointer active:scale-[0.98] transition-transform shadow-lg shadow-blue-500/30"
       onClick={() => onItemClick?.(nextItem)}
     >
       <div className="flex items-center space-x-3 min-w-0">
-        <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center shrink-0">
-          <Icon size={16} />
+        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+          <Navigation size={18} />
         </div>
         <div className="min-w-0">
-          <p className="text-[10px] text-slate-400 font-bold tracking-wider uppercase">
-            {isNext ? '下一站' : '現在前往'}
+          <p className="text-[10px] text-white/80 font-bold tracking-wider">
+            {isNext ? '現在前往' : '現在前往'}
           </p>
           <p className="text-sm font-serif-tc font-bold truncate">
             {nextItem.title}
           </p>
         </div>
       </div>
-      <div className="flex items-center space-x-2 shrink-0 ml-3">
-        {nextItem.time && (
-          <span className="text-xs text-slate-300 font-serif-tc">{nextItem.time}</span>
-        )}
-        <ChevronRight size={16} className="text-slate-400" />
-      </div>
+      {nextItem.time && (
+        <div className="text-right shrink-0 ml-3">
+          <p className="text-[10px] text-white/80 font-bold tracking-wider">預計抵達</p>
+          <p className="text-base font-serif-tc font-bold">{nextItem.time}</p>
+        </div>
+      )}
     </div>
   )
 }
