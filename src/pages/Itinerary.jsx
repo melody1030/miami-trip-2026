@@ -5,6 +5,9 @@ import DaySelector from '../components/itinerary/DaySelector'
 import DayHero from '../components/itinerary/DayHero'
 import ItemCard from '../components/itinerary/ItemCard'
 import ItemModal from '../components/itinerary/ItemModal'
+import StatusWidget from '../components/itinerary/StatusWidget'
+import WeatherStrip from '../components/itinerary/WeatherStrip'
+import RouteMapCard from '../components/itinerary/RouteMapCard'
 
 export default function Itinerary() {
   const { days, loading: daysLoading } = useDays()
@@ -80,8 +83,21 @@ export default function Itinerary() {
             </div>
           )}
 
+          {/* Weather forecast strip */}
+          <div className="mt-4">
+            <WeatherStrip date={day.date} />
+          </div>
+
+          {/* Route map card */}
+          <RouteMapCard items={sortedItems} />
+
+          {/* Floating status widget */}
+          {!isModalOpen && sortedItems.length > 0 && (
+            <StatusWidget items={sortedItems} onItemClick={handleOpenModal} />
+          )}
+
           {/* Timeline items */}
-          <div className="mt-8 px-6">
+          <div className="mt-4 px-6">
             {dayLoading ? (
               <div className="text-slate-400 py-10 text-center font-serif-tc">
                 載入中...
