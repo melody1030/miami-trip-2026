@@ -88,11 +88,6 @@ export default function Itinerary() {
             <WeatherStrip date={day.date} />
           </div>
 
-          {/* Route map card */}
-          <RouteMapCard items={sortedItems} />
-
-          {/* (StatusWidget rendered as fixed overlay below) */}
-
           {/* Timeline items */}
           <div className="mt-4 px-6">
             {dayLoading ? (
@@ -109,6 +104,9 @@ export default function Itinerary() {
               ))
             )}
           </div>
+
+          {/* Route map card — at the bottom of all items */}
+          <RouteMapCard items={sortedItems} />
         </div>
       )}
 
