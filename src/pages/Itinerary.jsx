@@ -30,6 +30,12 @@ export default function Itinerary() {
     }
   }, [days, selectedDayId])
 
+  useEffect(() => {
+    if (selectedDayId) {
+      document.getElementById('main-scroll')?.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, [selectedDayId])
+
   const handleOpenModal = (item) => {
     setSelectedItem(item)
     // Small delay so the modal renders at scale-90 first, then animates to scale-100
