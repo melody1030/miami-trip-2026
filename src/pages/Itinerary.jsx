@@ -26,7 +26,7 @@ export default function Itinerary() {
 
   // Portal target — captured after mount so the DOM is fully ready
   const [appShell, setAppShell] = useState(null)
-  useEffect(() => { setAppShell(appShell) }, [])
+  useEffect(() => { setAppShell(document.getElementById('app-shell')) }, [])
 
   useEffect(() => {
     if (days.length > 0 && !selectedDayId) {
