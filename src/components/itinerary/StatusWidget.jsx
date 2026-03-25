@@ -1,27 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Navigation, CheckCircle } from 'lucide-react'
-
-function parseTime(timeStr) {
-  if (!timeStr) return null
-  const match = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i)
-  if (!match) return null
-  let [, h, m, period] = match
-  h = parseInt(h)
-  m = parseInt(m)
-  if (period) {
-    if (period.toUpperCase() === 'PM' && h !== 12) h += 12
-    if (period.toUpperCase() === 'AM' && h === 12) h = 0
-  }
-  return h * 60 + m
-}
-
-function to24hr(timeStr) {
-  const mins = parseTime(timeStr)
-  if (mins === null) return timeStr
-  const h = Math.floor(mins / 60)
-  const m = mins % 60
-  return `${h}:${String(m).padStart(2, '0')}`
-}
+import { parseTime, to24hr } from '../../utils/helpers'
 
 export default function StatusWidget({ items, onItemClick }) {
   const [now, setNow] = useState(new Date())

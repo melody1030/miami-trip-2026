@@ -1,18 +1,6 @@
 import { Crown } from 'lucide-react'
 import { CARD_STYLES } from '../../utils/constants'
-
-function to24hr(timeStr) {
-  if (!timeStr) return ''
-  const match = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i)
-  if (!match) return timeStr
-  let [, h, m, period] = match
-  h = parseInt(h)
-  if (period) {
-    if (period.toUpperCase() === 'PM' && h !== 12) h += 12
-    if (period.toUpperCase() === 'AM' && h === 12) h = 0
-  }
-  return `${h}:${m.padStart(2, '0')}`
-}
+import { to24hr } from '../../utils/helpers'
 
 export default function ItemCard({ item, onClick }) {
   const style = CARD_STYLES[item.type] || CARD_STYLES.attraction

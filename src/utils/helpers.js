@@ -7,14 +7,24 @@ export function getNavigationUrl(address) {
     : `https://www.google.com/maps/dir/?api=1&destination=${encoded}`
 }
 
-export function formatDate(date) {
-  return new Date(date).toLocaleDateString('zh-TW', {
-    month: 'numeric',
-    day: 'numeric',
-    weekday: 'short',
-  })
+export function parseTime(timeStr) {
+  if (!timeStr) return null
+  const match = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i)
+  if (!match) return null
+  let [, h, m, period] = match
+  h = parseInt(h)
+  m = parseInt(m)
+  if (period) {
+    if (period.toUpperCase() === 'PM' && h !== 12) h += 12
+    if (period.toUpperCase() === 'AM' && h === 12) h = 0
+  }
+  return h * 60 + m
 }
 
-export function generateItemId() {
-  return `item-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
+export function to24hr(timeStr) {
+  const mins = parseTime(timeStr)
+  if (mins === null) return timeStr || ''
+  const h = Math.floor(mins / 60)
+  const m = mins % 60
+  return `${h}:${String(m).padStart(2, '0')}`
 }

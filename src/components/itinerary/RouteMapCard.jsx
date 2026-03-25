@@ -1,4 +1,4 @@
-import { Map, Navigation, ExternalLink } from 'lucide-react'
+import { Map, ExternalLink } from 'lucide-react'
 
 export default function RouteMapCard({ items }) {
   const stops = items.filter((i) => i.address)

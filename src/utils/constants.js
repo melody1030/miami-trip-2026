@@ -1,4 +1,4 @@
-import { Camera, Utensils, Car, Palmtree, ShoppingBag, Coffee, Train } from 'lucide-react'
+import { Camera, Utensils, Car } from 'lucide-react'
 
 export const CARD_STYLES = {
   attraction: {
