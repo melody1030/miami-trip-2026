@@ -59,12 +59,12 @@ async function seed() {
     date: '2026-03-30',
     dayNumber: 1,
     title: '✈️ 抵達邁阿密',
-    heroImage: 'https://images.unsplash.com/photo-1514369118554-e20d93546b30?q=80&w=800&auto=format&fit=crop',
+    heroImage: 'https://images.unsplash.com/photo-1483450388369-9ed95738483c?q=80&w=800&auto=format&fit=crop',
     items: [
       {
         id: 'd1-1', type: 'transit', title: '航班 LGA → MIA', time: '10:59 AM',
-        description: 'Flight 981，預計下午 2:07 抵達邁阿密國際機場。飛行時間約 3 小時，記得帶本書或下載影集打發時間！',
-        address: '', sortOrder: 1, highlight: false, notes: ['飛行 3 小時', '帶書或影集'],
+        description: 'Flight 981，預計下午 2:07 抵達邁阿密國際機場。飛行時間約 3 小時',
+        address: '', sortOrder: 1, highlight: false, notes: ['飛行 3 小時'],
         image: '',
       },
       {
@@ -79,14 +79,14 @@ async function seed() {
         description: 'South Beach 最知名的露天步行街，長達 8 個街區，超過 200 間精品店、畫廊與露天咖啡座。由傳奇 Art Deco 建築師 Morris Lapidus 設計，適合傍晚涼爽時來逛。人潮眾多、氣氛很好，是個觀察人群與拍照的絕佳地點！',
         address: 'Lincoln Rd, Miami Beach, FL 33139', sortOrder: 3, highlight: false,
         notes: ['200+商店', '露天步道', '適合拍照'],
-        image: 'https://images.unsplash.com/photo-1535498730771-e735b998cd64?q=80&w=600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1722460819536-d54fccffc678?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd1-4', type: 'restaurant', title: 'CVI.CHE 105 South Beach', time: '6:30 PM',
         description: '超人氣秘魯海鮮餐廳，Ceviche 是招牌必點！推薦 Causa Traviesa、Lomo Saltado、章魚料理（Pulpo）。調酒也很讚，尤其是經典的 Pisco Sour。位於 Lincoln Road 上，用餐氣氛活潑時尚。建議提早到或預約！',
         address: '1245 Lincoln Rd, Miami Beach, FL 33139', sortOrder: 4, highlight: true,
         notes: ['必點 Ceviche', 'Pisco Sour', '建議預約'],
-        image: 'https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?q=80&w=600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1535400255456-984241443b29?q=80&w=600&auto=format&fit=crop',
       },
     ],
   })
@@ -97,7 +97,7 @@ async function seed() {
     date: '2026-03-31',
     dayNumber: 2,
     title: '🌿 小哈瓦那',
-    heroImage: 'https://images.unsplash.com/photo-1533760333285-1d0411132e18?q=80&w=800&auto=format&fit=crop',
+    heroImage: 'https://images.unsplash.com/photo-1548211726-7f93384ec097?q=80&w=800&auto=format&fit=crop',
     items: [
       {
         id: 'd2-1', type: 'restaurant', title: 'Blue Lavender Cafe & Market', time: '9:00 AM',
@@ -111,7 +111,7 @@ async function seed() {
         description: '小哈瓦那傳奇古巴三明治名店！2022 年獲得米其林 Bib Gourmand 認證，被譽為「邁阿密最好吃的古巴三明治」。豬肉醃製整整一週，搭配自製火腿、酸黃瓜與芥末醬，夾在現烤麵包裡，外酥內軟、滿嘴噴香。從小貨櫃起家到現在的排隊名店，建議開門就到，通常需等 30 分鐘！',
         address: '2057 SW 8th St, Miami, FL 33135', sortOrder: 2, highlight: true,
         notes: ['米其林推薦', '排隊 30 分鐘', '古巴三明治'],
-        image: 'https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=600&auto=format&fit=crop',
+        image: 'https://plus.unsplash.com/premium_photo-1700677185953-f9473e7e2ba1?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd2-3', type: 'restaurant', title: 'La Colada Gourmet', time: '12:00 PM',
@@ -125,21 +125,21 @@ async function seed() {
         description: 'Calle Ocho（SW 8th Street）是小哈瓦那的心臟！街道兩側壁畫繽紛，有公雞雕像、Celia Cruz 壁畫和各種拉丁藝術。必訪 Domino Park 看當地老爺爺們下骨牌，還有手工雪茄店可以看師傅現場捲雪茄。濃濃的拉丁風情，彷彿置身哈瓦那！',
         address: 'Calle Ocho, Miami, FL 33135', sortOrder: 4, highlight: false,
         notes: ['壁畫街', '雪茄體驗', 'Domino Park'],
-        image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1694716429728-0956a334d3e8?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd2-5', type: 'restaurant', title: 'Bachour', time: '3:00 PM',
         description: '由兩度獲選「世界最佳甜點師」（2018 & 2022）的 Antonio Bachour 主理，米其林 Bib Gourmand 認證。甜點櫃美到像藝術品，推薦芒果百香果馬卡龍、開心果可頌、巴黎布丁（Parisian Flan）。每一款都精緻得像高級傢俱，好吃到真的會哭！🍰',
         address: '2020 Salzedo St, Coral Gables, FL 33134', sortOrder: 5, highlight: true,
         notes: ['世界最佳甜點師', '米其林推薦', '必吃可頌'],
-        image: 'https://images.unsplash.com/photo-1612203985729-70726954388c?q=80&w=600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1634560604992-7784a29bc419?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd2-6', type: 'attraction', title: 'LoanDepot Park 外觀打卡 ⚾', time: '6:00 PM',
         description: '邁阿密馬林魚隊的主場館 LoanDepot Park，位於小哈瓦那區。球場外觀現代壯觀，有巨型馬林魚雕塑和棒球主題裝置藝術，非常適合拍照留念。周圍街區也充滿拉丁風情，可以順便散步感受小哈瓦那的傍晚氣氛。',
         address: '501 Marlins Way, Miami, FL 33125', sortOrder: 6, highlight: false,
         notes: ['外觀拍照', '馬林魚雕塑', '免費參觀'],
-        image: '',
+        image: 'https://images.unsplash.com/photo-1475440197469-e367ec8eeb19?q=80&w=600&auto=format&fit=crop',
       },
     ],
   })
@@ -150,14 +150,14 @@ async function seed() {
     date: '2026-04-01',
     dayNumber: 3,
     title: '🎨 Wynwood / Design District',
-    heroImage: 'https://images.unsplash.com/photo-1544464522-875fbf104332?q=80&w=800&auto=format&fit=crop',
+    heroImage: 'https://images.unsplash.com/photo-1548209454-8548045387bc?q=80&w=800&auto=format&fit=crop',
     items: [
       {
         id: 'd3-1', type: 'attraction', title: 'Wynwood Walls 街頭藝術', time: '10:00 AM',
         description: '邁阿密最具代表性的戶外藝術園區！佔地兩英畝，擁有超過 40 幅大型壁畫、12 座雕塑和 3 間藝廊。部分作品掃 QR code 還會動起來！需購票入場，建議平日早上去避開人潮。開放時間 10:30 AM - 6:30 PM，最後入場為關門前 30 分鐘。注意：不能觸摸或靠在牆上。',
         address: '2520 NW 2nd Ave, Miami, FL 33127', sortOrder: 1, highlight: true,
         notes: ['需購票', '40+壁畫', 'QR 互動'],
-        image: 'https://images.unsplash.com/photo-1572947650440-e8a97ef053b2?q=80&w=600&auto=format&fit=crop',
+        image: 'https://plus.unsplash.com/premium_photo-1693166014741-05064aee4201?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd3-2', type: 'restaurant', title: 'Amara at Paraiso', time: '12:00 PM',
@@ -171,21 +171,21 @@ async function seed() {
         description: '涵蓋 18 個街區的高端藝術與時尚區！除了 Prada、Dior、Fendi 等 120 多間精品店，還有免費的 ICA 當代藝術館和戶外雕塑花園。別錯過 Palm Court 裡 Buckminster Fuller 的「蒼蠅眼穹頂」和德國設計師 Konstantin Grcic 的懸吊椅網裝置。就算不購物，光看建築和公共藝術就很值得！適合散步拍照。',
         address: 'Miami Design District, Miami, FL 33137', sortOrder: 3, highlight: false,
         notes: ['免費藝術館', '120+精品店', '建築拍照'],
-        image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1615663592771-79a204c3ca5b?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd3-4', type: 'attraction', title: 'Kaseya Center 外觀打卡', time: '4:00 PM',
         description: 'NBA 邁阿密熱火隊的主場館！就算沒有比賽也值得在外面拍照留念。球場外觀現代壯觀，周圍也有一些裝置藝術。',
         address: '601 Biscayne Blvd, Miami, FL 33132', sortOrder: 4, highlight: false,
         notes: ['熱火隊主場', '外觀拍照'],
-        image: '',
+        image: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd3-5', type: 'attraction', title: 'Bayfront Park 看夕陽', time: '5:00 PM',
         description: '位於 Biscayne Bay 旁的海濱公園，是欣賞邁阿密天際線和夕陽的絕佳地點。公園內有噴泉、雕塑和寬敞的步道，非常適合傍晚散步放鬆。免費入場！',
         address: '301 Biscayne Blvd, Miami, FL 33132', sortOrder: 5, highlight: false,
         notes: ['免費入場', '看夕陽', '天際線'],
-        image: 'https://images.unsplash.com/photo-1506966953602-c20cc11f75e3?q=80&w=600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1697657997273-57638a993fba?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd3-6', type: 'restaurant', title: 'Bayside Marketplace 晚餐', time: '6:30 PM',
@@ -203,13 +203,13 @@ async function seed() {
     date: '2026-04-02',
     dayNumber: 4,
     title: '🏝️ Key West 一日遊',
-    heroImage: 'https://images.unsplash.com/photo-1580974852861-c381510a43f3?q=80&w=800&auto=format&fit=crop',
+    heroImage: 'https://images.unsplash.com/photo-1741680260581-91a2591f90e0?q=80&w=800&auto=format&fit=crop',
     items: [
       {
         id: 'd4-1', type: 'transit', title: '開車前往 Key West', time: '7:00 AM',
-        description: '早點出發！從邁阿密到 Key West 單程約 4 小時（160 英里），沿途會經過著名的跨海公路 Overseas Highway，風景絕美。路上會經過 Seven Mile Bridge，是拍照的好地方。建議加滿油再出發，沿途加油站較少。',
+        description: '早點出發！從邁阿密到 Key West 單程約 4 小時，沿途會經過著名的跨海公路 Overseas Highway，風景絕美。路上會經過 Seven Mile Bridge，是拍照的好地方。建議加滿油再出發，沿途加油站較少。',
         address: 'Key West, FL 33040', sortOrder: 1, highlight: false,
-        notes: ['單程 4 小時', '先加滿油', '跨海公路'],
+        notes: ['單程 4 小時', '浮淺天堂', '跨海公路'],
         image: '',
       },
       {
@@ -231,7 +231,7 @@ async function seed() {
         description: '美國本土最南端的地標！這個色彩繽紛的大浮標位於 Whitehead 和 South Street 交叉口，標示著距離古巴僅 90 英里。是 Key West 最熱門的拍照打卡點，幾乎每個遊客都會來。排隊拍照通常需要 10-20 分鐘，但非常值得！',
         address: 'Southernmost Point, Key West, FL 33040', sortOrder: 4, highlight: false,
         notes: ['距古巴 90 英里', '排隊 10-20 分鐘', '必拍打卡'],
-        image: '',
+        image: 'https://images.unsplash.com/photo-1722480176525-1cefada5037e?q=80&w=600&auto=format&fit=crop',
       },
       {
         id: 'd4-5', type: 'transit', title: '開車返回邁阿密', time: '4:00 PM',
