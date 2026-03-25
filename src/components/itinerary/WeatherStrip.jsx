@@ -90,17 +90,17 @@ export default function WeatherStrip({ date }) {
   if (hourly.length === 0) return null
 
   return (
-    <div className="mx-4 mb-4 bg-slate-50 rounded-2xl px-2 py-3">
-      <div className="flex overflow-x-auto no-scrollbar space-x-4 px-2">
+    <div className="mx-4 mb-4 bg-slate-50 rounded-2xl px-3 py-4">
+      <div className="flex overflow-x-auto no-scrollbar space-x-6 px-2">
         {hourly.map((h) => {
           const Icon = getIcon(h.code)
           return (
-            <div key={h.hour} className="flex flex-col items-center space-y-1 shrink-0">
-              <span className="text-[10px] text-slate-400 font-medium">
+            <div key={h.hour} className="flex flex-col items-center space-y-1.5 shrink-0">
+              <span className="text-xs text-slate-400 font-medium">
                 {h.hour === 12 ? '12PM' : h.hour > 12 ? `${h.hour - 12}PM` : `${h.hour}AM`}
               </span>
-              <Icon size={18} className="text-slate-500" />
-              <span className="text-xs font-bold text-slate-700">{h.temp}°</span>
+              <Icon size={22} className="text-slate-500" />
+              <span className="text-sm font-bold text-slate-700">{h.temp}°</span>
             </div>
           )
         })}
