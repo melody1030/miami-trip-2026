@@ -10,8 +10,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: '邁阿密之旅 2026',
-        short_name: '邁阿密之旅',
+        name: '漫漫 ManMan',
+        short_name: '漫漫',
         description: '2026 春季邁阿密旅行行程',
         theme_color: '#ffffff',
         background_color: '#ffffff',

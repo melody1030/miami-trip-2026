@@ -65,7 +65,7 @@ export default function Itinerary() {
         <div className="flex items-center justify-between mb-3 px-2">
           <div className="w-10" />
           <span className="font-serif-tc text-lg tracking-widest font-medium text-slate-800">
-            MIAMI TRIP
+            漫漫 ManMan
           </span>
           <button
             className="p-2 -mr-2 rounded-full active:bg-slate-100 transition-colors"
