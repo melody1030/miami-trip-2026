@@ -266,7 +266,7 @@ async function seed() {
         image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=600&auto=format&fit=crop',
       },
       {
-        id: 'd5-2', type: 'attraction', title: 'Versace Mansion / Ocean Drive', time: '10:30 AM',
+        id: 'd5-2', type: 'attraction', title: 'Versace Mansion', time: '10:30 AM',
         description: '位於 Ocean Drive 上的傳奇 Casa Casuarina，建於 1930 年，曾是時尚大師 Gianni Versace 的私人豪宅（1992-1997）。現已改為精品飯店，最大亮點是由超過一百萬片馬賽克磁磚（含 24K 金磚）打造的 54 呎長泳池。可以在外面拍照，或進去餐廳 Gianni\'s 用餐體驗奢華氛圍。Ocean Drive 本身也是散步看 Art Deco 建築的好地方。',
         address: '1116 Ocean Dr, Miami Beach, FL 33139', sortOrder: 2, highlight: true,
         notes: ['傳奇豪宅', '24K金泳池', 'Art Deco'],
