@@ -34,7 +34,7 @@ export default function ItemModal({ item, isOpen, onClose }) {
                   alt={item.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                 <button
                   onClick={onClose}
                   className="absolute top-3 right-3 z-10 p-2 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full active:bg-slate-100 transition-colors shadow-sm"
