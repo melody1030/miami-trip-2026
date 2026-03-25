@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { MoreHorizontal } from 'lucide-react'
-import { useDays, useDayItems } from '../hooks/useItinerary'
+import { useDays, useDayItems, useTripInfo } from '../hooks/useItinerary'
 import DaySelector from '../components/itinerary/DaySelector'
 import DayHero from '../components/itinerary/DayHero'
 import ItemCard from '../components/itinerary/ItemCard'
@@ -9,15 +9,20 @@ import ItemModal from '../components/itinerary/ItemModal'
 import StatusWidget from '../components/itinerary/StatusWidget'
 import WeatherStrip from '../components/itinerary/WeatherStrip'
 import RouteMapCard from '../components/itinerary/RouteMapCard'
+import ToolkitModal from '../components/toolkit/ToolkitModal'
 
 export default function Itinerary() {
   const { days, loading: daysLoading } = useDays()
+  const { trip } = useTripInfo()
   const [selectedDayId, setSelectedDayId] = useState(null)
   const { day, loading: dayLoading } = useDayItems(selectedDayId)
 
   // Modal state
   const [selectedItem, setSelectedItem] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // Toolkit modal state
+  const [isToolkitOpen, setIsToolkitOpen] = useState(false)
 
   useEffect(() => {
     if (days.length > 0 && !selectedDayId) {
@@ -62,7 +67,10 @@ export default function Itinerary() {
           <span className="font-serif-tc text-lg tracking-widest font-medium text-slate-800">
             MIAMI TRIP
           </span>
-          <button className="p-2 -mr-2 rounded-full active:bg-slate-100 transition-colors">
+          <button
+            className="p-2 -mr-2 rounded-full active:bg-slate-100 transition-colors"
+            onClick={() => setIsToolkitOpen(true)}
+          >
             <MoreHorizontal size={24} className="text-slate-800" />
           </button>
         </div>
@@ -132,6 +140,18 @@ export default function Itinerary() {
             item={selectedItem}
             isOpen={isModalOpen}
             onClose={handleCloseModal}
+          />,
+          document.getElementById('app-shell')
+        )
+      }
+
+      {/* Toolkit modal — portaled to app shell */}
+      {document.getElementById('app-shell') &&
+        createPortal(
+          <ToolkitModal
+            trip={trip}
+            isOpen={isToolkitOpen}
+            onClose={() => setIsToolkitOpen(false)}
           />,
           document.getElementById('app-shell')
         )
