@@ -24,6 +24,10 @@ export default function Itinerary() {
   // Toolkit modal state
   const [isToolkitOpen, setIsToolkitOpen] = useState(false)
 
+  // Portal target — captured after mount so the DOM is fully ready
+  const [appShell, setAppShell] = useState(null)
+  useEffect(() => { setAppShell(appShell) }, [])
+
   useEffect(() => {
     if (days.length > 0 && !selectedDayId) {
       setSelectedDayId(days[0].id)
@@ -132,34 +136,34 @@ export default function Itinerary() {
       )}
 
       {/* Floating status widget — portaled to app shell so it overlays above scroll */}
-      {!isModalOpen && sortedItems.length > 0 && document.getElementById('app-shell') &&
+      {!isModalOpen && sortedItems.length > 0 && appShell &&
         createPortal(
           <StatusWidget items={sortedItems} onItemClick={handleOpenModal} />,
-          document.getElementById('app-shell')
+          appShell
         )
       }
 
       {/* Centered modal — portaled to app shell for correct positioning */}
-      {document.getElementById('app-shell') &&
+      {appShell &&
         createPortal(
           <ItemModal
             item={selectedItem}
             isOpen={isModalOpen}
             onClose={handleCloseModal}
           />,
-          document.getElementById('app-shell')
+          appShell
         )
       }
 
       {/* Toolkit modal — portaled to app shell */}
-      {document.getElementById('app-shell') &&
+      {appShell &&
         createPortal(
           <ToolkitModal
             trip={trip}
             isOpen={isToolkitOpen}
             onClose={() => setIsToolkitOpen(false)}
           />,
-          document.getElementById('app-shell')
+          appShell
         )
       }
     </>
