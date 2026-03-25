@@ -220,6 +220,13 @@ async function seed() {
         image: 'https://images.unsplash.com/photo-1580541631950-7282082b53ce?q=80&w=600&auto=format&fit=crop',
       },
       {
+        id: 'd4-hemingway', type: 'attraction', title: '海明威故居', time: '11:45 AM',
+        description: '美國文學大師歐內斯特・海明威曾在此居住超過 10 年，寫下《戰地鐘聲》等名作。這棟西班牙殖民風格別墅建於 1851 年，至今仍住著約 50 隻六趾貓，都是海明威當年愛貓的後代。導覽約 1 小時，門票 $18/成人。',
+        address: '907 Whitehead St, Key West, FL 33040', sortOrder: 2.5, highlight: false,
+        notes: ['門票 $18', '六趾貓', '導覽約 1 小時'],
+        image: '',
+      },
+      {
         id: 'd4-3', type: 'attraction', title: 'Mallory Square 日落廣場', time: '12:30 PM',
         description: '每天日落前兩小時開始的免費「日落慶典」是 Key West 最經典的體驗！廣場上會有街頭藝人、音樂家、手工藝攤販和美食小販。日落時分整個廣場會擠滿人，一起看太陽沈入墨西哥灣，氣氛超棒！建議傍晚再回來看日落。',
         address: 'Mallory Square, Key West, FL 33040', sortOrder: 3, highlight: true,
