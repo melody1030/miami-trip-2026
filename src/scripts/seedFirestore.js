@@ -96,7 +96,7 @@ async function seed() {
   await setDoc(doc(db, 'days', 'day-2'), {
     date: '2026-03-31',
     dayNumber: 2,
-    title: '🌿 小哈瓦那 + Bachour + 馬林魚',
+    title: '🌿 小哈瓦那',
     heroImage: 'https://images.unsplash.com/photo-1533760333285-1d0411132e18?q=80&w=800&auto=format&fit=crop',
     items: [
       {
@@ -149,7 +149,7 @@ async function seed() {
   await setDoc(doc(db, 'days', 'day-3'), {
     date: '2026-04-01',
     dayNumber: 3,
-    title: '🎨 Wynwood + Design District + 市中心',
+    title: '🎨 Wynwood / Design District',
     heroImage: 'https://images.unsplash.com/photo-1544464522-875fbf104332?q=80&w=800&auto=format&fit=crop',
     items: [
       {
