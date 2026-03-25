@@ -1,4 +1,4 @@
-# Miami Trip 2026
+# 漫漫 ManMan
 
 A minimalist Travel Management PWA for our 2026 Spring Miami trip (Mar 30 – Apr 3).
 
@@ -16,10 +16,12 @@ Built for two users — designed to be senior-friendly with large fonts, high wh
 
 - **Daily Itinerary** — Timeline view with day selector, hero images, and categorized cards (attraction / restaurant / transit)
 - **One-Tap Navigation** — Auto deep-links to Apple Maps (iOS) or Google Maps
-- **Bottom Sheet Detail** — Tap any card to view details with slide-up modal
-- **Travel Toolkit** — Flight info, accommodation, emergency contacts (WIP)
-- **Expense Tracker** — Multi-currency budget tracking (WIP)
-- **Full CRUD** — Add, edit, delete itinerary items
+- **Item Detail Modal** — Tap any card for a centered pop-up with photo, description, notes, and navigate button
+- **Travel Toolkit** — Flight info and accommodation details via the ⋯ button
+- **Live Status Widget** — Floating widget tracking current/next destination based on local time
+- **Weather Strip** — Hourly forecast for each day via Open-Meteo
+- **Offline Support** — Works without internet after first load (IndexedDB + PWA service worker)
+- **Installable PWA** — Add to home screen with custom icon (漫漫 ManMan)
 - **All in Traditional Chinese**
 
 ## Getting Started
@@ -60,6 +62,8 @@ VITE_FIREBASE_APP_ID=
 | `npm run preview` | Preview production build |
 | `npm run lint` | Run ESLint |
 | `node src/scripts/seedFirestore.js` | Seed/reset Firestore data |
+| `node src/scripts/exportFirestore.js` | Export current Firestore data as JSON |
+| `npx firebase deploy --only hosting` | Deploy to Firebase Hosting |
 
 ## Design
 
