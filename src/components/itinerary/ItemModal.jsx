@@ -26,24 +26,29 @@ export default function ItemModal({ item, isOpen, onClose }) {
       >
         {item && (
           <>
-            {/* Fixed close button */}
-            <button
-              onClick={onClose}
-              className="sticky top-3 self-end mr-4 mt-3 z-10 p-2 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full hover:bg-white active:bg-slate-100 transition-colors shadow-sm"
-            >
-              <X size={18} />
-            </button>
-
-            {/* Photo */}
-            {item.image && (
-              <div className="relative w-full h-44 overflow-hidden shrink-0 -mt-11">
+            {/* Photo with overlaid close button */}
+            {item.image ? (
+              <div className="relative w-full h-44 overflow-hidden shrink-0">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
+                <button
+                  onClick={onClose}
+                  className="absolute top-3 right-3 z-10 p-2 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full active:bg-slate-100 transition-colors shadow-sm"
+                >
+                  <X size={18} />
+                </button>
               </div>
+            ) : (
+              <button
+                onClick={onClose}
+                className="sticky top-3 self-end mr-4 mt-3 z-10 p-2 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full active:bg-slate-100 transition-colors shadow-sm"
+              >
+                <X size={18} />
+              </button>
             )}
 
             <div className={`px-6 pb-6 ${item.image ? 'pt-3' : '-mt-6'}`}>
