@@ -119,12 +119,17 @@ export default function Itinerary() {
         )
       }
 
-      {/* Bottom sheet modal */}
-      <ItemModal
-        item={selectedItem}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
+      {/* Centered modal — portaled to app shell for correct positioning */}
+      {document.getElementById('app-shell') &&
+        createPortal(
+          <ItemModal
+            item={selectedItem}
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+          />,
+          document.getElementById('app-shell')
+        )
+      }
     </>
   )
 }
