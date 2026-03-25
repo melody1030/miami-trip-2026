@@ -266,13 +266,6 @@ async function seed() {
         image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?q=80&w=600&auto=format&fit=crop',
       },
       {
-        id: 'd5-3', type: 'attraction', title: 'Vizcaya Museum & Gardens 🌿', time: '11:30 AM',
-        description: '邁阿密最美的歷史莊園！由工業鉅子 James Deering 於 1916 年建造的義大利文藝復興風格別墅，花園是歐洲宮廷風，被熱帶叢林環繞。必看石船雕塑和海灣景觀。門票 $25/成人，建議提前網路購票避免排隊。開放時間 9:30 AM - 4:30 PM（週二休館）。預計逛約 1.5-2 小時。',
-        address: '3251 S Miami Ave, Miami, FL 33129', sortOrder: 3, highlight: true,
-        notes: ['門票 $25', '提前購票', '逛 1.5-2 小時'],
-        image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop',
-      },
-      {
         id: 'd5-4', type: 'transit', title: '前往機場 ✈️', time: '1:30 PM',
         description: 'Flight 993，下午 4:05 起飛，晚上 7:00 抵達紐約 LGA。建議至少提前 2 小時到機場（1:30 PM 出發）。從 Vizcaya 到 MIA 機場約 20 分鐘車程。記得在機場退還任何租車！邁阿密之旅圓滿結束 🌴',
         address: 'Miami International Airport, Miami, FL 33126', sortOrder: 4, highlight: false,
