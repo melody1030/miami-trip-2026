@@ -26,37 +26,27 @@ export default function ItemModal({ item, isOpen, onClose }) {
       >
         {item && (
           <>
+            {/* Fixed close button */}
+            <button
+              onClick={onClose}
+              className="sticky top-3 self-end mr-4 mt-3 z-10 p-2 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full hover:bg-white active:bg-slate-100 transition-colors shadow-sm"
+            >
+              <X size={18} />
+            </button>
+
             {/* Photo */}
             {item.image && (
-              <div className="relative w-full h-44 overflow-hidden rounded-t-3xl shrink-0">
+              <div className="relative w-full h-44 overflow-hidden shrink-0 -mt-11">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
-                <button
-                  onClick={onClose}
-                  className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full hover:bg-white active:bg-slate-100 transition-colors"
-                >
-                  <X size={18} />
-                </button>
               </div>
             )}
 
-            {/* Close button (no photo) */}
-            {!item.image && (
-              <div className="flex justify-end px-5 pt-4">
-                <button
-                  onClick={onClose}
-                  className="p-2 bg-slate-50 text-slate-500 rounded-full hover:bg-slate-100 active:bg-slate-200 transition-colors"
-                >
-                  <X size={18} />
-                </button>
-              </div>
-            )}
-
-            <div className="px-6 pb-6 pt-4">
+            <div className={`px-6 pb-6 ${item.image ? 'pt-3' : '-mt-6'}`}>
               {/* Type badge */}
               {isHighlight ? (
                 <div className="flex items-center space-x-1 mb-3 text-pink-500">
