@@ -14,52 +14,50 @@ export default function ItemModal({ item, isOpen, onClose }) {
     <>
       {/* Backdrop */}
       <div
-        className={`absolute inset-0 bg-slate-900/40 backdrop-blur-sm z-30 transition-opacity duration-400 ease-out ${
+        className={`absolute inset-0 bg-slate-900/50 backdrop-blur-sm z-30 transition-opacity duration-300 ${
           isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={onClose}
       />
 
-      {/* Panel */}
+      {/* Centered Modal */}
       <div
-        style={{
-          transform: isOpen ? 'scale(1) translateY(0)' : 'scale(0.9) translateY(2rem)',
-          opacity: isOpen ? 1 : 0,
-          transition: 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease-out',
-        }}
-        className={`absolute left-0 right-0 bottom-0 bg-white rounded-t-[2rem] z-40 will-change-transform ${
-          !isOpen ? 'pointer-events-none' : ''
-        } max-h-[85vh] overflow-y-auto no-scrollbar pb-8 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]`}
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2.5rem)] bg-white rounded-3xl z-40 transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'
+        } max-h-[85vh] overflow-y-auto no-scrollbar shadow-2xl flex flex-col`}
       >
         {/* Photo */}
         {item.image && (
-          <div className="relative w-full h-48 overflow-hidden rounded-t-[2rem]">
+          <div className="relative w-full h-44 overflow-hidden rounded-t-3xl shrink-0">
             <img
               src={item.image}
               alt={item.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
+            {/* Close button on photo */}
+            <button
+              onClick={onClose}
+              className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full hover:bg-white active:bg-slate-100 transition-colors"
+            >
+              <X size={18} />
+            </button>
           </div>
         )}
 
-        {/* Handle + close */}
-        <div className={`sticky top-0 z-10 flex justify-between items-center px-6 pt-5 pb-3 ${
-          item.image ? 'bg-white' : 'bg-gradient-to-b from-white via-white to-white/90'
-        }`}>
-          {!item.image && (
-            <div className="w-10 h-1.5 bg-slate-200 rounded-full mx-auto absolute left-1/2 -translate-x-1/2 top-3" />
-          )}
-          <div className="w-8" />
-          <button
-            onClick={onClose}
-            className="p-2 bg-slate-50 text-slate-500 rounded-full hover:bg-slate-100 active:bg-slate-200 transition-colors"
-          >
-            <X size={20} />
-          </button>
-        </div>
+        {/* Close button (no photo) */}
+        {!item.image && (
+          <div className="flex justify-end px-5 pt-4">
+            <button
+              onClick={onClose}
+              className="p-2 bg-slate-50 text-slate-500 rounded-full hover:bg-slate-100 active:bg-slate-200 transition-colors"
+            >
+              <X size={18} />
+            </button>
+          </div>
+        )}
 
-        <div className="px-6">
+        <div className="px-6 pb-6 pt-4">
           {/* Type badge */}
           {isHighlight ? (
             <div className="flex items-center space-x-1 mb-3 text-pink-500">
@@ -139,7 +137,7 @@ export default function ItemModal({ item, isOpen, onClose }) {
               href={navUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`mt-8 w-full rounded-2xl py-4 text-base font-bold flex items-center justify-center space-x-2 shadow-lg active:opacity-90 transition-opacity ${
+              className={`mt-6 w-full rounded-2xl py-4 text-base font-bold flex items-center justify-center space-x-2 shadow-lg active:opacity-90 transition-opacity ${
                 isHighlight
                   ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-pink-500/20'
                   : 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-blue-500/20'
