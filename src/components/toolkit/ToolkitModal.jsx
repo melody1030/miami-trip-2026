@@ -1,4 +1,4 @@
-import { X, Plane, Building2, Phone, Navigation } from 'lucide-react'
+import { X, Plane, Building2, Navigation } from 'lucide-react'
 import { getNavigationUrl } from '../../utils/helpers'
 
 function formatFlightTime(isoStr) {
@@ -16,7 +16,6 @@ function formatDate(isoStr) {
 export default function ToolkitModal({ trip, isOpen, onClose }) {
   const flights = trip?.flights || []
   const accommodations = trip?.accommodations || []
-  const emergencyContacts = trip?.emergencyContacts || []
 
   return (
     <>
@@ -113,31 +112,6 @@ export default function ToolkitModal({ trip, isOpen, onClose }) {
             })}
           </Section>
 
-          {/* Emergency Contacts */}
-          <Section icon={Phone} title="緊急聯絡">
-            <div className="bg-slate-50 rounded-2xl overflow-hidden">
-              {emergencyContacts.map((c, i) => (
-                <div
-                  key={i}
-                  className={`flex items-center justify-between p-4 ${
-                    i < emergencyContacts.length - 1 ? 'border-b border-slate-100' : ''
-                  }`}
-                >
-                  <span className="text-sm text-slate-700 font-sans-tc">{c.label}</span>
-                  {c.phone ? (
-                    <a
-                      href={`tel:${c.phone}`}
-                      className="text-sm font-bold text-cyan-600 font-serif-tc"
-                    >
-                      {c.phone}
-                    </a>
-                  ) : (
-                    <span className="text-xs text-slate-300">—</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </Section>
         </div>
       </div>
     </>
