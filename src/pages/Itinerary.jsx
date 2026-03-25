@@ -27,12 +27,18 @@ export default function Itinerary() {
 
   const handleOpenModal = (item) => {
     setSelectedItem(item)
-    setIsModalOpen(true)
+    // Small delay so the modal renders at scale-90 first, then animates to scale-100
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setIsModalOpen(true)
+      })
+    })
   }
 
   const handleCloseModal = () => {
     setIsModalOpen(false)
-    setTimeout(() => setSelectedItem(null), 300)
+    // Wait for close animation to finish before clearing item
+    setTimeout(() => setSelectedItem(null), 500)
   }
 
   if (daysLoading) {
